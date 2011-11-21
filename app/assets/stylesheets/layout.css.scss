@@ -1,0 +1,146 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/typography/lists/horizontal-list";
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #222 image-url('wood.jpg') fixed center center;
+  color: #333;
+  font-size: 12px;
+  font-family: Helvetica, sans-serif;
+}
+
+nav {
+  position: fixed;
+  height: 55px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #eee image-url('white-linen.png');
+  @include box-shadow(rgba(0,0,0,0.3) 0 0 6px 4px);
+  z-index: 100;
+
+  ul {
+    width: 930px;
+    margin: 0px auto;
+    overflow: visible;
+    text-align: right;
+    padding-right: 50px;
+    
+    li {
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    li.home {
+      float: left;
+    }
+    
+    li.link {
+      display: inline-block;
+      height: 25px;
+      line-height: 25px;
+      padding: 15px 10px;
+      font-size: 20px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 600;
+
+      // IE7 hack
+      zoom: 1;
+      *display: inline;
+    }
+  }
+  
+  h1 {
+    font-family: 'Shadows Into Light';
+    font-size: 48px;
+    color: #212121;
+//    @include text-shadow(#666 3px 3px 0, #777 -2px -1px 0);
+    padding-top: 6px;
+    padding-left: 30px;
+  }
+}
+
+header {
+  position: fixed;
+  height: 340px;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  
+  div {
+    width: 980px;
+    margin: 0px auto;
+    position: relative;
+  
+    img {
+      display: block;
+      margin: 0px auto;
+      height: 340px;
+    }
+  
+    h2 {
+      font-family: 'Shadows Into Light', cursive;
+      font-size: 32px;
+      color: #f2f2f2;
+      @include text-shadow(#666 3px 3px 0, #777 -2px -1px 0);
+      padding-top: 7px;
+      position: absolute;
+      top: 0px;
+      left: 60px;
+      @include rotate(-3deg);
+    }
+    
+    h3 {
+      font-family: 'Shadows Into Light', cursive;
+      font-size: 28px;
+      color: #212121;
+      @include text-shadow(#ccc 3px 3px 0, #aaa -2px -1px 0);
+      padding-top: 7px;
+      position: absolute;
+      bottom: 16px;
+      right: 60px;
+      text-align: right;
+      
+      &:first-line {
+        font-size: 36px;
+      }
+    }
+  }  
+}
+
+#content {
+  background: #eee image-url('white-linen.png');
+  @include box-shadow(rgba(0,0,0,0.5) 0 0 6px 4px);
+  width: 860px;
+  position: relative;
+  padding: 40px 60px;
+  margin: 395px auto 0;
+  
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  color: #464646;
+  line-height: 25px;
+  
+  section {
+    margin: 0px auto 150px;
+    position: relative;
+    
+    h2 {
+      font-family: 'Josefin Sans', sans-serif;
+      line-height: 30px;
+      margin-bottom: 25px;
+      font-weight: 600;
+      font-size: 30px;
+      color: #333;
+      @include text-shadow(rgba(0,0,0,0.5), 0 1px 0);
+    }
+    
+  }
+
+}
+  
