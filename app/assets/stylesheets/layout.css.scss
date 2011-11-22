@@ -113,6 +113,9 @@ header {
   }  
 }
 
+$column-width: 44px;
+$column-space: 30px;
+
 #content {
   background: #eee image-url('white-linen.png');
   @include box-shadow(rgba(0,0,0,0.5) 0 0 6px 4px);
@@ -131,7 +134,6 @@ header {
     position: relative;
     
     h2 {
-      font-family: 'Josefin Sans', sans-serif;
       line-height: 30px;
       margin-bottom: 25px;
       font-weight: 600;
@@ -140,7 +142,91 @@ header {
       @include text-shadow(rgba(0,0,0,0.5), 0 1px 0);
     }
     
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    p {
+      margin-bottom: 25px;
+    }
+      
+    
+    div.two-column {
+      overflow: hidden;
+      width: 100%;
+      
+      div {
+        float: left;
+        margin-left: $column-space;
+        width: 6*$column-width + 5*$column-space;
+        
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      
+    }
+    
+    div.two-column.with-images {
+      margin: 0px auto;
+      width: 10*$column-width + 9*$column-space;
+      
+      div {
+        width: 5*$column-width + 4*$column-space;        
+      } 
+    }
+    
+    div.three-column {
+      overflow: hidden;
+      width: 100%;
+      
+      div {
+        float: left;
+        margin-left: $column-space;
+        width: 4*$column-width + 3*$column-space;
+        
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    div.four-column {
+      overflow: hidden;
+      width: 100%;
+      
+      div {
+        float: left;
+        margin-left: $column-space;
+        width: 3*$column-width + 2*$column-space;
+        
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+    
   }
 
+}
+
+b { font-weight: bold; }
+
+div.hotel, div.travel {  
+  div.meta {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    
+    h4 {
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+    
+    
 }
   
