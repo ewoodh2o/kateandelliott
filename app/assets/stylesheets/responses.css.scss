@@ -1,0 +1,73 @@
+@import "compass/css3";
+
+#rsvp {
+  
+  #card {
+    width: 450px;
+    margin: 0px auto;
+    background: image-url('rice-paper.png');
+    padding: 15px;
+    @include box-shadow(rgba(0,0,0,0.1) 0 5px 20px 3px);
+    border: 1px solid rgba(0,0,0,0.15);
+    div.fields {
+      padding: 15px 20px;
+      border: 1px solid #e2e2e2;
+      position: relative;
+    }
+    cursor: default;
+    
+  }
+  
+  
+  input[type=text] {
+    background: none;
+    border: none;
+    border-bottom: 1px dotted #333;
+    padding: 3px 5px;
+    text-align: center;
+    cursor: text;
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  input#response_name {
+    width: 201px;
+  }
+
+  input#response_guests {
+    width: 31px;
+  }
+  
+  .radiorow { color: #999; }
+  .radiorow.selected { color: #464646; }
+  
+  div.actions {
+    margin-right: 10px;
+    text-align: right;
+    margin-top: 25px;
+    
+    input[type=submit] {
+    
+    }
+  }
+  
+  div.field_with_errors {
+    display: inline;
+  
+    input#response_name,
+    input#response_guests {
+      border-color: #c33;
+    }
+  }
+  
+  div#error_explanation {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: #c33;
+    font-weight: bold;
+  }
+  
+}

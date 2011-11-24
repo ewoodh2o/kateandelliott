@@ -1,0 +1,42 @@
+<div id="card"><div class="fields">
+  <%= form_for(@response, :remote => true) do |f| %>
+    <% if @response.errors.any? %>
+      <div id="error_explanation">
+        <% if @response.errors[:name].any? %>
+          Please tell us your name
+        <% elsif @response.errors[:guests].any? %>
+          How many will be joining you?
+        <% else %>
+          Please call Elliott at 404-376-3172
+        <% end %>
+      </div>      
+    <% end %>
+
+    <p>Hello!</p>
+
+    <div>I'm <%= f.text_field :name %> and I
+      <div class="radiorow">
+        <%= f.radio_button :attending, 'yes' %>
+        will attend with
+        <%= f.text_field :guests, :value => f.object.attending? ? f.object.guests : '1' %>
+        guests (myself included).
+      </div>
+      <div class="radiorow">
+        <%= f.radio_button :attending, 'no' %>
+        will be unable to attend.
+        <%= f.hidden_field :guests, :value => 0, :disabled => true, :id => 'response_guests_zero' %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit f.object.new_record? ? 'Send' : 'Update' %>
+    </div>
+  
+  <% end %>
+</div></div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    $('form').responseform();
+  });
+</script>
