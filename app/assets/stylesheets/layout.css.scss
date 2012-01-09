@@ -9,7 +9,7 @@ html {
 
 body {
   background: #222 image-url('wood.jpg') fixed center center;
-  color: #333;
+  color: #222;
   font-size: 12px;
   font-family: Helvetica, sans-serif;
 }
@@ -30,16 +30,16 @@ nav {
     overflow: visible;
     text-align: right;
     padding-right: 50px;
-    
+
     li {
       text-align: center;
       cursor: pointer;
     }
-    
+
     li.home {
       float: left;
     }
-    
+
     li.link {
       display: inline-block;
       height: 25px;
@@ -54,7 +54,7 @@ nav {
       *display: inline;
     }
   }
-  
+
   h1 {
     font-family: 'Shadows Into Light';
     font-size: 48px;
@@ -71,18 +71,18 @@ header {
   top: 55px;
   left: 0;
   width: 100%;
-  
+
   div {
     width: 980px;
     margin: 0px auto;
     position: relative;
-  
+
     img {
       display: block;
       margin: 0px auto;
       height: 340px;
     }
-  
+
     h2 {
       font-family: 'Shadows Into Light', cursive;
       font-size: 32px;
@@ -94,7 +94,7 @@ header {
       left: 60px;
       @include rotate(-3deg);
     }
-    
+
     h3 {
       font-family: 'Shadows Into Light', cursive;
       font-size: 28px;
@@ -105,34 +105,52 @@ header {
       bottom: 16px;
       right: 60px;
       text-align: right;
-      
+
       &:first-line {
         font-size: 36px;
       }
     }
-  }  
+  }
 }
 
 $column-width: 44px;
 $column-space: 30px;
+
+.clear {
+  clear: both;
+}
 
 #content {
   background: #eee image-url('white-linen.png');
   @include box-shadow(rgba(0,0,0,0.5) 0 0 6px 4px);
   width: 860px;
   position: relative;
-  padding: 40px 60px;
+  padding: 40px 60px 150px;
   margin: 395px auto 0;
-  
+
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
   color: #464646;
   line-height: 25px;
-  
+
+  hr {
+    margin: 0 0 150px 0;
+    padding-top: 150px;
+    border: 0 none;
+    width: 100%;
+    height: 30px;
+    background: image-url('hr.png') no-repeat center bottom;
+    clear: both;
+  }
+
+  a, a:visited {
+    color: #339;
+  }
+
   section {
-    margin: 0px auto 150px;
+    margin: 0px auto;
     position: relative;
-    
+
     h2 {
       line-height: 30px;
       margin-bottom: 25px;
@@ -141,52 +159,52 @@ $column-space: 30px;
       color: #333;
       @include text-shadow(rgba(0,0,0,0.5), 0 1px 0);
     }
-    
+
     h3 {
       font-size: 20px;
       font-weight: bold;
       color: #333;
     }
-    
+
     p {
       margin-bottom: 25px;
     }
-      
-    
+
+
     div.two-column {
-      overflow: hidden;
+      //overflow: hidden;
       width: 100%;
-      
-      div {
+
+      > div {
         float: left;
         margin-left: $column-space;
         width: 6*$column-width + 5*$column-space;
-        
+
         &:first-child {
           margin-left: 0;
         }
       }
-      
+
     }
-    
+
     div.two-column.with-images {
       margin: 0px auto;
       width: 10*$column-width + 9*$column-space;
-      
+
       div {
-        width: 5*$column-width + 4*$column-space;        
-      } 
+        width: 5*$column-width + 4*$column-space;
+      }
     }
-    
+
     div.three-column {
       overflow: hidden;
       width: 100%;
-      
-      div {
+
+      > div {
         float: left;
         margin-left: $column-space;
         width: 4*$column-width + 3*$column-space;
-        
+
         &:first-child {
           margin-left: 0;
         }
@@ -196,36 +214,203 @@ $column-space: 30px;
     div.four-column {
       overflow: hidden;
       width: 100%;
-      
-      div {
+
+      > div {
         float: left;
         margin-left: $column-space;
         width: 3*$column-width + 2*$column-space;
-        
+
         &:first-child {
           margin-left: 0;
         }
       }
     }
-    
+
   }
 
 }
 
 b { font-weight: bold; }
 
-div.hotel, div.travel {  
-  div.meta {
-    font-size: 14px;
-    line-height: 20px;
-    margin-bottom: 25px;
+div.meta {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+
+  h4 {
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+
+div.hotel, div.travel {
+  position: relative;
+}
+
+img.polaroid {
+	padding: 8px 8px 10px 8px;
+	background: #fff;
+	@include box-shadow(rgba(0,0,0,0.15) 0 0 6px 2px);
+}
+
+div.hotel {
+  p.details {
+    text-align: justify;
+    height: 150px;
+  }
+
+  a.img {
+    display: block;
+    padding-top: 5px;
+  }
+
+  img {
+    display: block;
+    margin: 5px auto 25px;
+    width: 220px;
+    height: 120px;
+
+    &.omni, &.wmarriott { @include rotate(-1deg); }
+    &.hiltongardeninn { @include rotate(2deg); }
+  }
+}
+
+#the-trip p.getting-there {
+  width: 9*$column-width + 8*$column-space;
+}
+
+#airports {
+  margin-bottom: 75px;
+}
+
+#the-trip a.map {
+  position: absolute;
+  right: -85px;
+  top: 40px;
+  @include rotate(2deg);
+  display: block;
+}
+
+div#ceremony, div#reception {
+  position: relative;
+  width: 100%;
+
+  > div.description {
+    float: left;
+    width: 7*$column-width + 6*$column-space;
+    text-align: justify;
+  }
+
+  > div.details {
+    float: left;
+    margin-top: 25px;
+    margin-left: $column-space;
+    width: 3*$column-width + 2*$column-space;
     text-align: center;
-    
     h4 {
       font-weight: 600;
       font-size: 16px;
     }
   }
-    
-    
+}
+
+div#ceremony {
+  img.church {
+    position: absolute;
+    right: -85px;
+    top: 0;
+    @include rotate(2deg);
+  }
+}
+
+div#eventmap {
+  clear: both;
+  height: 100px;
+}
+
+div#reception {
+  > div.description {
+    margin-left: 150px;
+  }
+
+  img.house {
+    position: absolute;
+    left: -100px;
+    top: -60px;
+    @include rotate(2deg);
+  }
+  img.backyard {
+    position: absolute;
+    left: -90px;
+    top: 100px;
+    @include rotate(-1deg);
+  }
+}
+
+#the-party {
+  b {
+    display: block;
+    padding-top: 5px;
+  }
+  img {
+    padding: 5px;
+    @include box-shadow(rgba(0,0,0,0.15) 0 0 3px 1px);
+    background: #fff;
+    width: 50px;
+    height: 50px;
+  }
+
+  h3.bridesmaids {
+    padding-right: 85px;
+    text-align: right;
+  }
+  div.bridesmaid {
+    text-align: right;
+    height: 60px;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    img { float: right; margin-left: 20px; }
+  }
+  h3.groomsmen {
+    padding-left: 85px;
+  }
+  div.groomsman {
+    height: 60px;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    img { float: left; margin-right: 20px; }
+  }
+
+  p.instructions {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    line-height: 16px;
+    padding-top: 10px;
+    clear: both;
+  }
+}
+
+footer {
+  width: 860px;
+  margin: 30px auto 20px;
+  padding: 0 60px;
+  color: #777;
+  height: 31px;
+  line-height: 31px;
+  vertical-align: middle;
+
+  div.text {
+    width: 6*$column-width + 5*$column-space;
+    float: left;
+  }
+  div.icons {
+    text-align: right;
+    float: left;
+    width: 6*$column-width + 5*$column-space;
+    margin-left: $column-space;
+  }
 }

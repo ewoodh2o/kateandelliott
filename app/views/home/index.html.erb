@@ -1,44 +1,140 @@
 
 <section id="the-wedding">
   <h2>The Wedding</h2>
-  <p>Frankfurter short loin flank, beef ribs pancetta fatback bresaola meatloaf 
-    kielbasa corned beef capicola shoulder pig meatball. Corned beef pork chop 
-    short loin, capicola leberkäse kielbasa cow turducken. T-bone beef ribs chuck 
-    chicken capicola. Salami pork loin capicola, meatloaf chicken ham hock pork 
-    chop pastrami. Ribeye chuck turducken, meatloaf sirloin hamburger jowl tail 
-    short loin venison capicola leberkäse. Bresaola sausage shankle jerky 
-    capicola salami, ham swine ground round strip steak kielbasa ball tip. 
-    Shankle ground round hamburger pork belly shank.</p>
+  <div id="ceremony">
+    <div class="description">
+      <h3>Ceremony</h3>
+      <p>Kate and Elliott will be married on May 12, 2012 in Kate's hometown of Newport News, Virginia.  The ceremony will be held at St. Mary Star of the Sea Catholic Church.  The church is located at Fort Monroe, a recently decommissioned military base.  The ceremony will start at 4:30p (tentative).</p>
+      <p>Please allow ample time when arriving, as you will need to stop at the security gate.  Tell the guard that you are visiting the catholic church.  He or she can direct you where to go from there.</p>
+    </div>
+    <div class="details">
+      <h4>St. Mary Star of the Sea Catholic Church</h4>
+      <p>7 Frank Lane<br>
+        Fort Monroe, Virginia</p>
+      <h4>May 12, 2012</h4>
+      <p>4:30 in the afternoon</p>
+    </div>
+    <%= image_tag 'wedding/church.jpg', :class => 'polaroid church' %>
+  </div>
+  <div class="clear"></div>
+
+  <div id="eventmap"></div>
+
+  <div id="reception">
+    <div class="description">
+      <h3>Reception</h3>
+      <p>The reception will be held at the Stephens' residence in Newport News.  The reception begins at 6:30 in the evening with a cocktail hour and photos, followed by dinner, dancing with DJ Bang, and of course cake!</p>
+      <p>Please do not park on the street or in the driveway.  You may leave your car at Riverside Elementary School.  A shuttle will be available to take you to and from the reception.</p>
+    </div>
+    <div class="details">
+      <h4>Stephens' Residence</h4>
+      <p>503 Riverside Drive<br>
+        Newport News, Virginia</p>
+      <h4>Riverside Elementary</h4>
+      <p>1100 Country Club Road<br>
+        Newport News, Virginia</p>
+    </div>
+    <%= image_tag 'wedding/house.jpg', :class => 'polaroid house' %>
+    <%= image_tag 'wedding/backyard.jpg', :class => 'polaroid backyard' %>
+>
+  </div>
 </section>
+
+<hr>
 
 <section id="the-party">
   <h2>The Party</h2>
-  <p>Frankfurter short loin flank, beef ribs pancetta fatback bresaola meatloaf 
-    kielbasa corned beef capicola shoulder pig meatball. Corned beef pork chop 
-    short loin, capicola leberkäse kielbasa cow turducken. T-bone beef ribs chuck 
-    chicken capicola. Salami pork loin capicola, meatloaf chicken ham hock pork 
-    chop pastrami. Ribeye chuck turducken, meatloaf sirloin hamburger jowl tail 
-    short loin venison capicola leberkäse. Bresaola sausage shankle jerky 
-    capicola salami, ham swine ground round strip steak kielbasa ball tip. 
-    Shankle ground round hamburger pork belly shank.</p>
+  <div class="two-column">
+    <div>
+      <h3 class="bridesmaids">The Bridesmaids</h3>
+      <div class="bridesmaid">
+        <%= fb_image_tag '1285773010' %>
+        <b>Bethany Tudor</b>
+        Maid of Honor
+      </div>
+      <div class="bridesmaid">
+        <%= fb_image_tag '12700253' %>
+        <b>Jessica Parker</b>
+        Maid of Honor
+      </div>
+      <div class="bridesmaid">
+        <%= fb_image_tag '776419294' %>
+        <b>Arianne Groth</b>
+        Sister-in-law of the bride
+      </div>
+      <div class="bridesmaid">
+        <%= fb_image_tag '100001793217982' %>
+        <b>Clare Stephens</b>
+        Sister of the bride
+      </div>
+      <div class="bridesmaid">
+        <%= fb_image_tag '12712584' %>
+        <b>Jennifer Stuart</b>
+        Friend of the couple
+      </div>
+      <div class="bridesmaid">
+        <%= fb_image_tag 'swhisna' %>
+        <b>Stephanie Cash</b>
+        Friend of the couple
+      </div>
+    </div>
+    <div>
+      <h3 class="groomsmen">The Groomsmen</h3>
+      <div class="groomsman">
+        <%= fb_image_tag 'ryancash' %>
+        <b>Ryan Cash</b>
+        Best Man
+      </div>
+      <div class="groomsman">
+        <%= image_tag 'http://profile.ak.fbcdn.net/hprofile-ak-snc4/41370_12808750_1588_q.jpg' %>
+        <b>John Putrich</b>
+        Friend of the couple
+      </div>
+      <div class="groomsman">
+        <%= fb_image_tag '21424497' %>
+        <b>Mark Wood</b>
+        Brother of the groom
+      </div>
+      <div class="groomsman">
+        <%= fb_image_tag '12800529' %>
+        <b>Ross Gortney</b>
+        Friend of the couple
+      </div>
+      <div class="groomsman">
+        <%= fb_image_tag '12807493' %>
+        <b>Scott Kerklo</b>
+        Friend of the couple
+      </div>
+      <div class="groomsman">
+        <%= fb_image_tag '12801246' %>
+        <b>Trey Lawrence</b>
+        Friend of the couple
+      </div>
+    </div>
+  </div>
+  <p class="instructions">That's right, these pictures are courtesy of your Facebook profile.<br>Change your picture on Facebook and it'll update here within a few minutes.<br>Except you Putter.  You have paranoid security settings.</p>
 </section>
+
+<hr>
 
 <section id="the-trip">
   <h2>The Trip</h2>
 
   <h3>Getting There</h3>
-  <p>There are two nearby airports, or Richmond may be a better option for direct flights.</p>
-  <div class="three-column">
+  <a href="http://g.co/maps/ttr95"
+     class="map"><%= image_tag 'travel/nnmap.png', :class => 'polaroid' %></a>
+  <p class="getting-there">Newport News is about 10 hours from Atlanta, and also about 10 hours from Cincinnati.  For those chosing to fly, there are two nearby airports, or Richmond may be a better option for direct flights.</p>
+  <div id="airports" class="four-column">
     <div class="travel">
       <div class="meta">
-        <h4>Newport News Airport (PHF)</h4>
-        10-15 minutes from hotels
+        <h4 style="white-space: nowrap;">Newport News Airport (PHF)</h4>
+        15 minutes from hotels
       </div>
     </div>
     <div class="travel">
       <div class="meta">
         <h4>Norfolk Airport (ORF)</h4>
-        30-45 minutes from hotels
+        30 minutes from hotels
       </div>
     </div>
     <div class="travel">
@@ -48,14 +144,16 @@
       </div>
     </div>
   </div>
-  
+
   <h3>Where to Stay</h3>
   <p>Blocks of rooms are being held at two nearby hotels.  Please book your hotel
-    ASAP &ndash; two local universities are having graduations that weekend and 
+    ASAP &ndash; two local universities are having graduations that weekend and
     hotels are filling up fast.</p>
-    
-  <div class="two-column with-images">
+
+  <div class="three-column">
     <div class="hotel">
+      <a href="http://www.omnihotels.com/FindAHotel/NewportNews.aspx"
+         class="img" target="_blank"><%= image_tag 'travel/omni.jpg', :class => 'polaroid omni' %></a>
       <div class="meta">
         <h4>The Omni</h4>
         1000 Omni Boulevard<br>
@@ -64,7 +162,7 @@
         $129 / night &nbsp;|&nbsp;
         <a href="http://www.omnihotels.com/FindAHotel/NewportNews.aspx" target="_blank">link</a>
       </div>
-      <p>We recommend the Omni for the younger crowd.  The wedding party will be staying here,
+      <p class="details">We recommend the Omni for the younger crowd.  The wedding party will be staying here,
         and one of Newport News' few clubs is downstairs.  We are hoping to provide
         a late-night shuttle to this hotel.</p>
       <p><b>Reservations:</b><br>
@@ -72,27 +170,54 @@
     </div>
 
     <div class="hotel">
+      <a href="http://bit.ly/swwed" target="_blank"
+         class="img"><%= image_tag 'travel/hiltongardeninn.jpg', :class => 'polaroid hiltongardeninn' %></a>
       <div class="meta">
         <h4>Hilton Garden Inn</h4>
         180 Regal Way<br>
         Newport News, Virginia<br>
         757-947-1080<br>
-        $125 / night &nbsp;|&nbsp;
+        $129 / night &nbsp;|&nbsp;
         <a href="http://bit.ly/swwed" target="_blank">link</a>
       </div>
-      <p>We recommend the Hilton Garden Inn for family and other traveling guests.  It is 
-        in a quieter location, and Elliott's family will be staying here for the weekend.</p>
+      <p class="details">We recommend the Hilton Garden Inn for family and other traveling guests.  It is
+        in a quieter location, and most of Elliott's family will be staying here.</p>
       <p><b>Reservations:</b><br>
-        Book online at our <a href="http://bit.ly/swwed">event page</a>, or call the hotel and use reservation code SWWED.</p>
+        Book online at our <a href="http://bit.ly/swwed">event page</a>, or call and mention code SWWED.</p>
     </div>
+
+    <div class="hotel">
+      <a href="https://www.marriott.com/hotels/travel/phfcw-williamsburg-marriott/" class="img" target="_blank"><%= image_tag 'travel/wmarriott.jpg', :class => 'polaroid wmarriott' %></a>
+      <div class="meta">
+        <h4>Williamsburg Marriott</h4>
+        50 Kingsmill Road<br>
+        Williamsburg, Virginia<br>
+        757-220-2500<br>
+        $149 / night &nbsp;|&nbsp;
+        <a href="https://www.marriott.com/hotels/travel/phfcw-williamsburg-marriott/" target="_blank">link</a>
+      </div>
+      <p class="details">The Williamsburg Marriott is located near historic Colonial Williamsburg.  It is a bit further from the wedding events, but provides a great setting for touring during the day on Saturday.</p>
+      <p><b>Reservations:</b><br>
+        We do not have a block reserved here.  Please call the hotel.</p>
+    </div>
+
   </div>
+
+
 </section>
+
+<hr>
+
 
 <section id="the-spot">
   <h2>The Spot</h2>
+  <p>There's plenty to see in the Tidewater Area.  Colonial Williamsburg is just a half hour away, and Virginia Beach is also nearby.  The Mariner's Museum is a quick daytime tour, and the property also has a four mile nature hike trail around a lake.  We will post more about things to do in the surrounding area as the date nears.
 </section>
+
+<hr>
 
 <section id="rsvp">
   <h2>RSVP</h2>
-  <%= render :partial => 'responses/form' %>  
+  <p>We're thrilled you'll be joining us!  Please RSVP here after formal invitations have been mailed.</p>
+  <!-- <%= render :partial => 'responses/form' %> -->
 </section>
