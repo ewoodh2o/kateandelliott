@@ -21,10 +21,10 @@ role :db,  "snapper.two-fish.com", :primary => true
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :start do
-    run "cd #{current_release} && RAILS_ENV=production passenger start -a 127.0.0.1 -p 3010 -d"
+    run "cd #{current_release} && RAILS_ENV=production bundle exec passenger start -a 127.0.0.1 -p 3010 -d"
   end
   task :stop do
-    run "cd #{current_release} && passenger stop -p 3010"
+    run "cd #{current_release} && bundle exec passenger stop -p 3010"
   end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
@@ -34,9 +34,16 @@ namespace :deploy do
   task :bundle, :roles => :app do
     run "cd #{current_release} && bundle install"
   end
+
+  desc "Copy database.yml into place"
+  task :database_yml, :roles => :app do
+    run "cp #{shared_path}/configs/database.yml #{current_release}/config/"
+  end
+
 end
 
 after "deploy:update_code", 'deploy:bundle'
+after "deploy:update_code", 'deploy:database_yml'
 after "deploy", "deploy:cleanup"
 
 
