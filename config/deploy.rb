@@ -27,7 +27,8 @@ namespace :deploy do
     run "cd #{current_release} && bundle exec passenger stop -p 3010"
   end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    run "cd #{current_release} && bundle exec passenger stop -p 3010"
+    run "cd #{current_release} && RAILS_ENV=production bundle exec passenger start -a 127.0.0.1 -p 3010 -d"
   end
 
   desc "Install the bundle as necessary"
