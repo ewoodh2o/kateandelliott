@@ -239,9 +239,19 @@
 
 <section id="rsvp">
   <h2>RSVP</h2>
-  <p>Please let us know whether or not you'll be able to attend before <b>April 20, 2012</b>.</p>
-  <%= render :partial => @response.new_record? ?
-      'responses/form' : "responses/#{@response.attending}" %>
+  <div class="four-column">
+    <div>
+      <p><br>To assist us with planning, please let us know whether or not
+        you'll be able to attend before <b>April 20, 2012</b>.  If you
+        need to update your response later, you'll be able to come back
+        to this page to do so.</p>
+    </div>
+    <div class="triple">
+      <%= render :partial => @response.new_record? ?
+          'responses/form' : "responses/#{@response.attending}" %>
+      <p></p>
+    </div>
+  </div>
 
   <script type="text/javascript">
     function loadForm() {

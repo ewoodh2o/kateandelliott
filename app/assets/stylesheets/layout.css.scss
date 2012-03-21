@@ -236,6 +236,9 @@ $column-space: 30px;
         &:first-child {
           margin-left: 0;
         }
+        &.triple {
+          width: 9*$column-width + 8*$column-space;
+        }
       }
     }
 
