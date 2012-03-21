@@ -239,5 +239,16 @@
 
 <section id="rsvp">
   <h2>RSVP</h2>
-  <%= render :partial => 'responses/form' %>
+  <%= render :partial => @response.new_record? ?
+      'responses/form' : "responses/#{@response.attending}" %>
+
+  <script type="text/javascript">
+    function loadForm() {
+      $.ajax('/responses/mine/edit', {
+        success: function(data, status, xhr) {
+          $('#card').replaceWith(data);
+        }
+      });
+    }
+  </script>
 </section>

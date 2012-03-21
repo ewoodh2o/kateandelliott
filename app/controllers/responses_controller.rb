@@ -12,6 +12,12 @@ class ResponsesController < ApplicationController
     end
   end
 
+  # GET /responses/mine/edit
+  def edit
+    @response = Response.find(session[:response_id])
+    render :partial => 'form'
+  end
+
   # POST /responses
   def create
     @response = Response.new(params[:response])

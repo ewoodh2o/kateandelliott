@@ -2,5 +2,6 @@
   <div class="fields">
     <h3>Thanks <%= @response.name.split.first %>!</h3>
     <p>We can't wait to see you there!</p>
+    <p><%= link_to_function 'Edit my response', 'loadForm();' %></p>
   </div>
 </div>
