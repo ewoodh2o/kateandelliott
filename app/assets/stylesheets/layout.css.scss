@@ -218,6 +218,9 @@ $column-space: 30px;
         &:first-child {
           margin-left: 0;
         }
+        &.double {
+          width: 8*$column-width + 7*$column-space;
+        }
       }
     }
 
@@ -407,6 +410,33 @@ div#reception {
     padding-top: 30px;
     clear: both;
   }
+}
+
+#registry {
+
+  ul.links {
+    li {
+      margin-bottom: 25px;
+    }
+    
+    a {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      width: 180px;
+      margin: 0px auto;
+
+      img {
+        padding: 2px;
+        border: 1px solid #999;
+      }
+
+      &:hover img {
+        border: 1px solid #333;
+      }
+    }
+  }
+
 }
 
 footer {

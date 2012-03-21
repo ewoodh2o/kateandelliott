@@ -12,7 +12,7 @@
       <p>7 Frank Lane<br>
         Fort Monroe, Virginia</p>
       <h4>May 12, 2012</h4>
-      <p>4:30 in the afternoon</p>
+      <p>3:00 in the afternoon</p>
     </div>
     <%= image_tag 'wedding/church.jpg', :class => 'polaroid church' %>
   </div>
@@ -239,6 +239,7 @@
 
 <section id="rsvp">
   <h2>RSVP</h2>
+  <p>Please let us know whether or not you'll be able to attend before <b>April 20, 2012</b>.</p>
   <%= render :partial => @response.new_record? ?
       'responses/form' : "responses/#{@response.attending}" %>
 
@@ -251,4 +252,44 @@
       });
     }
   </script>
+</section>
+
+<hr>
+
+<section id="registry">
+  <h2>Registries</h2>
+  <div class="three-column">
+    <div class="double">
+      <p>We already own plenty of stuff, so gifts really are not
+        necessary.  We're more thrilled that you're considering
+        joining us for the occassion, and that's the best gift
+        we couuld ask for.</p>
+      <p>For those that insist, we've registered at a few places
+        on the right.  As many of you know, we both love good
+        food and usually enjoy the preparation process more than
+        the final result.  We rarely cook the same recipe twice!</p>
+      <p>Most of these items are upgrades for things we already
+        use every week.  We plan to find good homes for our
+        old equipment after the wedding.</p>
+    </div>
+    <div>
+      <ul class="links">
+        <li>
+          <a href="http://www.williams-sonoma.com/registry/2954013/registry-list.html" target="_blank">
+            <%= image_tag 'registry/williams-sonoma.png', :alt => 'Williams-Sonoma' %>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.thepolishedplate.com/giftregistry.aspx?guid=c0f44329-6165-4481-9434-3f793046e9b1" target="_blank">
+            <%= image_tag 'registry/polishedplate.png', :alt => 'The Polished Plate' %>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.amazon.com/gp/registry/registry.html?ie=UTF8&type=wedding&id=1YVYZMG5SCZPA" target="_blank">
+            <%= image_tag 'registry/amazon.png', :alt => 'amazon.com' %>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
