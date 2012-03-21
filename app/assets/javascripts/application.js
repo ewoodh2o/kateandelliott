@@ -8,3 +8,4 @@
 //= require jquery_ujs
 //= require waypoints.min
 //= require menu
+//= require responses

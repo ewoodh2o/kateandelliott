@@ -3,13 +3,19 @@
     <% if @response.errors.any? %>
       <div id="error_explanation">
         <% if @response.errors[:name].any? %>
-          Please tell us your name
+          Please tell us your name!
+          <script type="text/javascript">
+            $(function() { $('#response_name').focus(); });
+          </script>
         <% elsif @response.errors[:guests].any? %>
           How many will be joining you?
+          <script type="text/javascript">
+            $(function() { $('#response_guests').focus(); });
+          </script>
         <% else %>
-          Please call Elliott at 404-376-3172
+          Internal error: please call Elliott at 404-376-3172.
         <% end %>
-      </div>      
+      </div>
     <% end %>
 
     <p>Hello!</p>
@@ -18,20 +24,19 @@
       <div class="radiorow">
         <%= f.radio_button :attending, 'yes' %>
         will attend with
-        <%= f.text_field :guests, :value => f.object.attending? ? f.object.guests : '1' %>
-        guests (myself included).
+        <%= f.text_field :guests %>
+        additional <span id="guests_text">guests</span>.
       </div>
       <div class="radiorow">
         <%= f.radio_button :attending, 'no' %>
         will be unable to attend.
-        <%= f.hidden_field :guests, :value => 0, :disabled => true, :id => 'response_guests_zero' %>
       </div>
     </div>
 
     <div class="actions">
       <%= f.submit f.object.new_record? ? 'Send' : 'Update' %>
     </div>
-  
+
   <% end %>
 </div></div>
 

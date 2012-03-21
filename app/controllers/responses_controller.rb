@@ -1,11 +1,13 @@
 class ResponsesController < ApplicationController
-  # GET /responses
+
+  before_filter :only_allow_authorized_updates, :only => :update
+
   # GET /responses.json
   def index
+    head 403 and return unless params[:key] == 'glendale15'
     @responses = Response.all
 
     respond_to do |format|
-      format.html # index.html.erb
       format.json { render json: @responses }
     end
   end
@@ -17,7 +19,8 @@ class ResponsesController < ApplicationController
 
     respond_to do |format|
       if @response.save
-        format.html { render :partial => @response.attending? }
+        session[:response_id] = @response.id
+        format.html { render :partial => @response.attending }
       else
         format.html { render :partial => 'form' }
       end
@@ -26,26 +29,23 @@ class ResponsesController < ApplicationController
 
   # PUT /responses/1
   def update
-    @response = Response.find(params[:id])
+    @response = Response.find(session[:response_id])
 
     respond_to do |format|
-      if @response.save
-        format.html { render :partial => @response.attending? }
+      if @response.update_attributes(params[:response])
+        format.html { render :partial => @response.attending? ? 'yes' : 'no' }
       else
         format.html { render :partial => 'form' }
       end
     end
   end
 
-  # DELETE /responses/1
-  # DELETE /responses/1.json
-  def destroy
-    @response = Response.find(params[:id])
-    @response.destroy
+  private
 
-    respond_to do |format|
-      format.html { redirect_to responses_url }
-      format.json { head :ok }
+  def only_allow_authorized_updates
+    if params[:id].to_i != session[:response_id].to_i
+      render :text => 'You are not authorized to update that response.', :status => 403
     end
   end
+
 end

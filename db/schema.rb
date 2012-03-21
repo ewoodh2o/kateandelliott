@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(:version => 20111117033826) do
 
   create_table "responses", :force => true do |t|
     t.string   "name"
-    t.integer  "guests",     :default => 1
+    t.boolean  "attending"
+    t.integer  "guests"
     t.string   "ip"
     t.datetime "created_at"
     t.datetime "updated_at"
