@@ -41,7 +41,9 @@
   }
   
   .radiorow { color: #999; }
+  .radiorow input { color: #999; }
   .radiorow.selected { color: #464646; }
+  .radiorow.selected input { color: #464646; }
   
   div.actions {
     margin-right: 10px;

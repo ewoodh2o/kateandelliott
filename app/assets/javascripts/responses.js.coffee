@@ -15,12 +15,12 @@ jQuery ->
     init: (el) ->
       # self = el
       ($ '#rsvp #response_attending_yes').click (event) ->
-        $('#response_guests').attr('disabled', null)
+        # $('#response_guests').attr('disabled', null)
         $('#rsvp .radiorow').removeClass('selected')
         $(this).parents('.radiorow').addClass('selected')
 
       ($ '#rsvp #response_attending_no').click (event) ->
-        $('#response_guests').attr('disabled', 'disabled')
+        # $('#response_guests').attr('disabled', 'disabled')
         $('#rsvp .radiorow').removeClass('selected')
         $(this).parents('.radiorow').addClass('selected')
 
