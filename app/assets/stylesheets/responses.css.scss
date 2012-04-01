@@ -73,3 +73,13 @@
   }
   
 }
+
+table#rsvps {
+  width: 80%;
+  margin: 0px auto;
+
+  th { font-weight: bold; padding: 0 5px; }
+  tr:nth-child(even) { background: rgba(255,255,255,0.3); }
+  td { padding: 0 5px; }
+
+}

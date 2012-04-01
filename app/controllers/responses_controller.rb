@@ -4,10 +4,11 @@ class ResponsesController < ApplicationController
 
   # GET /responses.json
   def index
-    head 403 and return unless params[:key] == 'glendale15'
-    @responses = Response.all
+    render text: "Not authorized", status: 403 and return unless params[:key] == 'glendale15'
+    @responses = Response.order(:updated_at).all
 
     respond_to do |format|
+      format.html { render }
       format.json { render json: @responses }
     end
   end

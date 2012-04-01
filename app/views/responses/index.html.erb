@@ -1,21 +1,20 @@
-<h1>Listing responses</h1>
+<section>
+<h2>All RSVPs</h2>
 
-<table>
+<table id="rsvps">
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Name</th>
+    <th>Attending?</th>
+    <th>Guests</th>
   </tr>
 
 <% @responses.each do |response| %>
   <tr>
-    <td><%= link_to 'Show', response %></td>
-    <td><%= link_to 'Edit', edit_response_path(response) %></td>
-    <td><%= link_to 'Destroy', response, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= response.name %></td>
+    <td><%= response.attending? ? 'yes' : 'no' %></td>
+    <td><%= response.guests %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Response', new_response_path %>
+</section>
