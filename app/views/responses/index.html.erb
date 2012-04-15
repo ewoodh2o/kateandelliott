@@ -15,6 +15,13 @@
     <td><%= response.guests %></td>
   </tr>
 <% end %>
+
+  <tr style="margin-top: 5px; border-top: 1px solid #999">
+    <td><b>Total Attendees</b></td>
+    <td></td>
+    <% @responses.reject! { |r| !r.attending? } %>
+    <td><%= @responses.length + @responses.collect(&:guests).sum %></td>
+  </tr>
 </table>
 
 </section>
